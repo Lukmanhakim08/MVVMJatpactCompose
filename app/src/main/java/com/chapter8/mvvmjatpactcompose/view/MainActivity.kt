@@ -29,6 +29,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.rememberImagePainter
+import com.chapter8.mvvmjatpactcompose.R
 import com.chapter8.mvvmjatpactcompose.model.DataFilmResponseItem
 import com.chapter8.mvvmjatpactcompose.ui.theme.MVVMJatpactComposeTheme
 import com.chapter8.mvvmjatpactcompose.viewmodel.ViewModelFilm
@@ -49,20 +50,20 @@ class MainActivity : ComponentActivity() {
                     val dataFilm by viewModelFilm.dataState.collectAsState()
                     val mContext = LocalContext.current
                     Column(modifier = Modifier.padding(10.dp)) {
-//                        Image(
-//                            painterResource(R.drawable.ic_person),
-//                            contentDescription = "",
-//                            modifier = Modifier
-//                                .align(Alignment.End)
-//                                .clickable {
-//                                    mContext.startActivity(
-//                                        Intent(
-//                                            mContext,
-//                                            ListUserActivity::class.java
-//                                        )
-//                                    )
-//                                }
-//                        )
+                        Image(
+                            painterResource(R.drawable.ic_person),
+                            contentDescription = "",
+                            modifier = Modifier
+                                .align(Alignment.End)
+                                .clickable {
+                                    mContext.startActivity(
+                                        Intent(
+                                            mContext,
+                                            ListUserActivity::class.java
+                                        )
+                                    )
+                                }
+                        )
                         LazyColumn {
                             if (dataFilm.isEmpty()) {
                                 item {
